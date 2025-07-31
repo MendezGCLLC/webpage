@@ -1,0 +1,242 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;         /* Applies 20px on all sides */    
+    text-align: left;
+}
+
+header {
+    background: #ffffff;  /* or use your preferred color */
+    color: #004466;
+    padding: 20px 0;
+    text-align: left;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2.5em;
+}
+
+.about, .contact, .testimonials {
+    background: white;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 10px;
+}
+
+ul li {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+a {
+    color: #004466;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+blockquote {
+    font-style: italic;
+    border-left: 5px solid #ccc;
+    margin: 10px 0;
+    padding-left: 15px;
+}
+
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9em;
+}
+
+/* Animaciones */
+.hidden {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.6s ease-out;
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.logo-container img {
+    max-height: 100px;     /* 👍 Tamaño equilibrado en PC */
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+    margin-left: 10px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;      /* Alinea verticalmente logo + texto */
+    justify-content: flex-start;
+    gap: 15px;                /* Espacio entre logo y texto */
+    flex-wrap: wrap;
+}
+
+@media (max-width: 600px) {
+    .logo-container {
+        flex-direction: row; /* hace que se apile verticalmente */
+        align-items: flex-start;
+    }
+
+    .logo-container img {
+        max-height: 60px; /* aquí ajustas el tamaño del logo */
+    }
+
+    .logo-container h1 {
+        font-size: 1.3em;
+        text-align: left;
+    }
+}
+
+.call-now-container {
+    display: none;
+    text-align: center;
+    margin-top: 0;
+}
+
+.call-now-button {
+    background-color: red;
+    color: white;
+    padding: 8px 32px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 16px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+    display: inline-block;
+    margin-top: 4px;
+}
+
+/* Mostrar solo en móvil */
+@media screen and (max-width: 600px) {
+    .call-now-container {
+        display: block;
+    }
+}
+
+/* Hero section with background image */
+.hero {
+    background-image: url('assets/hero.WEBP'); /* 🔁 reemplaza con tu imagen */
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    position: relative;    
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 120px;    /* Overrides the top to be 100px */
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* oscurecer imagen */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+/* Reutiliza botón rojo */
+.quote-button {
+    margin-top: 10px;
+}
+
+/* Formulario de cotización */
+.quote-form-section {
+    background: white;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.quote-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.quote-form input,
+.quote-form button {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.quote-form button {
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+.quote-form button:hover {
+    background-color: darkred;
+}
+
+.promo-bar {
+    background-color: red;
+    color: white;
+    text-align: center;
+    padding: 12px 0;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+    width: 100vw;     /* 🔥 forces full viewport width */
+    margin: 0;
+    left: 0;
+    position: relative;
+    z-index: 2;
+}
+
+
